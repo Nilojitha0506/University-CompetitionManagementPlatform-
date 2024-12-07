@@ -1,0 +1,55 @@
+.search-container-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.search-container, .search-container2 {
+  flex: 1;
+  max-width: 100%;
+}
+
+.search-bar {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 40px;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #29292a;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+  color: #fff;
+}
+
+.table th, .table td {
+  padding: 8px 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+  color: #fff;
+  background-color: transparent;
+}
+
+.table th {
+  background-color: transparent;
+  color: #fff;
+}
+
+.table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
