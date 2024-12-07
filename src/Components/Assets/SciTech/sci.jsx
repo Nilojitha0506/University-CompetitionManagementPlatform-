@@ -34,7 +34,7 @@ const SciTech = () => {
       </a>,
     ],
     ["IIT", "University of Peradeniya", "Some other detail"],
-    ["Competition 6 Details", "University of Kelaniya", "Some other detail"],
+    ["IIT Details", "University of Kelaniya", "Some other detail"],
     ["Competition 7 Details", "University of Moratuwa", "Some other detail"],
   ];
   const filteredCompetitions = competitions.filter((competition) => {
