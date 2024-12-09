@@ -8,5 +8,5 @@ import './index.css';
 
 
 
-ReactDOM.render(<SciTech  />, document.getElementById("root"));
+ReactDOM.render(<LoginSignup />, document.getElementById("root"));
  

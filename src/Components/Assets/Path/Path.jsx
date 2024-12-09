@@ -3,9 +3,14 @@ import "./Path.css";
 
 const UniversityCompetitions = () => {
   const [selectedCompetition, setSelectedCompetition] = useState("");
+  const [submittedSelection, setSubmittedSelection] = useState("");
 
   const handleChange = (event) => {
     setSelectedCompetition(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    setSubmittedSelection(selectedCompetition);
   };
 
   return (
@@ -16,17 +21,11 @@ const UniversityCompetitions = () => {
         value={selectedCompetition}
         onChange={handleChange}
       >
-        <option
-          value="Science and Technology Competitions
-"
-        >
+        <option value="Science and Technology Competitions">
           Science and Technology Competitions
         </option>
         <option value="Engineering Challenges">Engineering Challenges</option>
-        <option
-          value="Business and Entrepreneurship Competitions
-"
-        >
+        <option value="Business and Entrepreneurship Competitions">
           Business and Entrepreneurship Competitions
         </option>
         <option value="Hackathons">Hackathons</option>
@@ -34,10 +33,7 @@ const UniversityCompetitions = () => {
           Research and Innovation Competitions
         </option>
         <option value="Design Competitions">Design Competitions</option>
-        <option
-          value="Public Speaking and Debate Competitions
-"
-        >
+        <option value="Public Speaking and Debate Competitions">
           Public Speaking and Debate Competitions
         </option>
         <option value="Mathematics and Logic Competitions">
@@ -45,10 +41,15 @@ const UniversityCompetitions = () => {
         </option>
       </select>
       <div>
-        <button type="submit">
-          <p>You selected: {selectedCompetition}</p>
+        <button type="button" onClick={handleSubmit}>
+          Submit Selection
         </button>
       </div>
+      {submittedSelection && (
+        <div>
+          <p>You selected: {submittedSelection}</p>
+        </div>
+      )}
     </div>
   );
 };
