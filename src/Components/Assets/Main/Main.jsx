@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Main.css";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
@@ -6,7 +7,9 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 
 const LoginSignup = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
+  const [errors, setErrors] = useState({});
 
   const handleRegisterLink = () => {
     setIsLogin(false);
@@ -16,24 +19,86 @@ const LoginSignup = () => {
     setIsLogin(true);
   };
 
+  const validateLogin = () => {
+    const errors = {};
+    const username = document.querySelector(
+      "input[placeholder='Username']"
+    ).value;
+    const password = document.querySelector(
+      "input[placeholder='Password']"
+    ).value;
+
+    if (!username) {
+      errors.username = "Username is required.";
+    }
+    if (!password) {
+      errors.password = "Password is required.";
+    }
+
+    return errors;
+  };
+
+  const validateRegistration = () => {
+    const errors = {};
+    const username = document.querySelector(
+      "input[placeholder='Username']"
+    ).value;
+    const password = document.querySelector(
+      "input[placeholder='Password']"
+    ).value;
+    const email = document.querySelector("input[placeholder='Email']").value;
+    const phone = document.querySelector(
+      "input[placeholder='Phone Number']"
+    ).value;
+
+    if (!username) {
+      errors.username = "Username is required.";
+    }
+    if (!password) {
+      errors.password = "Password is required.";
+    }
+    if (!email) {
+      errors.email = "Email is required.";
+    }
+    if (!phone) {
+      errors.phone = "Phone number is required.";
+    }
+
+    return errors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = isLogin ? validateLogin() : validateRegistration();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      setErrors({});
+      // Navigate to path.jsx
+      navigate("/path");
+    }
+  };
+
   return (
     <div className="wrapper">
       {isLogin && (
         <div className="form-box login">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1>Login</h1>
             <div className="input-box">
               <input type="text" placeholder="Username" required />
               <FaUser className="icon" />
+              {errors.username && <p className="error">{errors.username}</p>}
             </div>
             <div className="input-box">
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" required />
               <RiLockPasswordFill className="icon" />
+              {errors.password && <p className="error">{errors.password}</p>}
             </div>
             <div className="remember-forgot">
               <label>
-                <input type="checkbox" />
-                Remember me
+                <input type="checkbox" /> Remember me
               </label>
               <a href="#">Forgot Password?</a>
             </div>
@@ -51,40 +116,44 @@ const LoginSignup = () => {
       )}
       {!isLogin && (
         <div className="form-box register">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1>Registration</h1>
             <div className="input-box">
               <input type="text" placeholder="Username" required />
               <FaUser className="icon" />
+              {errors.username && <p className="error">{errors.username}</p>}
             </div>
             <div className="input-box">
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" required />
               <RiLockPasswordFill className="icon" />
+              {errors.password && <p className="error">{errors.password}</p>}
             </div>
             <div className="input-box">
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" required />
               <MdEmail className="icon" />
-            </div>
-            <div className="input-box">
-              <input type="number" placeholder="Age" />
+              {errors.email && <p className="error">{errors.email}</p>}
             </div>
             <div className="input-box">
               <input
                 type="tel"
                 placeholder="Phone Number"
                 pattern="[0-9]{10}"
+                required
               />
               <IoMdPhonePortrait className="icon" />
+              {errors.phone && <p className="error">{errors.phone}</p>}
             </div>
             <div className="input-box">
-              <select className="dropdown">
-                <option value="">Your Role</option>
+              <select className="dropdown" required>
+                <option value="">-- Select Your Role --</option>
                 <option value="User">User</option>
                 <option value="Admin">Admin</option>
               </select>
             </div>
+
+            {/* Dropdown for selecting University */}
             <div className="input-box">
-              <select className="dropdown">
+              <select className="dropdown" required>
                 <option value="">
                   -- Select Your University or Institute --
                 </option>
@@ -130,9 +199,11 @@ const LoginSignup = () => {
                 </optgroup>
               </select>
             </div>
+
             <div className="remember-forgot">
               <label>
-                <input type="checkbox" /> I agree to the terms & conditions
+                <input type="checkbox" required /> I agree to the terms &
+                conditions
               </label>
             </div>
             <button type="submit">Register</button>

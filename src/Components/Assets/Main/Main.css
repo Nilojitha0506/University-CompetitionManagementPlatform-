@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     max-width: 480px;
-    min-height: 100px;
+    min-height: 80px;
     backdrop-filter: blur(30px);
     border-radius: 10px;
     color: #fff;
@@ -11,7 +11,8 @@
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
+    margin:0;
+    padding-bottom:0px;
 }
 .wrapper.active {
     overflow-y: auto;
@@ -28,7 +29,7 @@ form h1 {
 }
 .input-box {
     position: relative;
-    margin: 0px 0; 
+    margin-top:0%; 
 }
 
 .input-box input,
@@ -125,18 +126,3 @@ form button:hover {
     }
 }
 
-/* Fix for Select element background issue */
-input, select {
-    background-color: transparent;
-}
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    color: #080808;
-}
-input:focus, select:focus {
-    outline: none;
-}

@@ -1,13 +1,19 @@
 import React from "react";
-import "./App.css";
-import "./Path.css";
-import UniversityCompetitions from "./Components/Assets/Path/Path.jsx";
+import LoginSignup from "./Components/Assets/Main/Main";
+import UniversityCompetitions from "./Components/Assets/Path/Path";
+import SciTech from "./Components/Assets/SciTech/sci";
+import "./index.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <UniversityCompetitions />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginSignup />} />
+        <Route path="/path" element={<UniversityCompetitions />} />
+        <Route path="/scitech" element={<SciTech />} />{" "}
+      </Routes>
+    </Router>
   );
 }
 
