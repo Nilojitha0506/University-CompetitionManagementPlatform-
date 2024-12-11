@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./Path.css";
 
 const UniversityCompetitions = () => {
-  const [selectedCompetition, setSelectedCompetition] = useState("");
+  const [selectedCompetition, setSelectedCompetition] = useState(
+    "Engineering Challenges"
+  );
   const [submittedSelection, setSubmittedSelection] = useState("");
 
   const handleChange = (event) => {
@@ -21,12 +23,12 @@ const UniversityCompetitions = () => {
         value={selectedCompetition}
         onChange={handleChange}
       >
-        <option value="Science and Technology Competitions">
-          Science and Technology Competitions
-        </option>
         <option value="Engineering Challenges">Engineering Challenges</option>
         <option value="Business and Entrepreneurship Competitions">
           Business and Entrepreneurship Competitions
+        </option>
+        <option value="Science and Technology Competitions">
+          Science and Technology Competitions
         </option>
         <option value="Hackathons">Hackathons</option>
         <option value="Research and Innovation Competitions">
@@ -41,13 +43,13 @@ const UniversityCompetitions = () => {
         </option>
       </select>
       <div>
-        <button type="button" onClick={handleSubmit}>
+        <button type="submit" onClick={handleSubmit}>
           Submit Selection
         </button>
       </div>
       {submittedSelection && (
         <div>
-          <p>You selected: {submittedSelection}</p>
+          <button type="submit">You selected: {submittedSelection}</button>
         </div>
       )}
     </div>

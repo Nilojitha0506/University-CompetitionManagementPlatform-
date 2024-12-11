@@ -4,12 +4,15 @@ import "./sci.css";
 const SciTech = () => {
   const [searchQueryCategory, setSearchQueryCategory] = useState("");
   const [searchQueryUniversity, setSearchQueryUniversity] = useState("");
+
   const handleSearchChangeCategory = (event) => {
     setSearchQueryCategory(event.target.value);
   };
+
   const handleSearchChangeUniversity = (event) => {
     setSearchQueryUniversity(event.target.value);
   };
+
   const competitions = [
     [
       "Medusa",
@@ -37,6 +40,7 @@ const SciTech = () => {
     ["IIT Details", "University of Kelaniya", "Some other detail"],
     ["Competition 7 Details", "University of Moratuwa", "Some other detail"],
   ];
+
   const filteredCompetitions = competitions.filter((competition) => {
     const categoryMatch = competition.some(
       (detail) =>
