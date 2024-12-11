@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginSignup />} />
         <Route path="/path" element={<UniversityCompetitions />} />
-        <Route path="/scitech" element={<SciTech />} />{" "}
+        <Route path="/SciTech" element={<SciTech />} />{" "}
       </Routes>
     </Router>
   );
