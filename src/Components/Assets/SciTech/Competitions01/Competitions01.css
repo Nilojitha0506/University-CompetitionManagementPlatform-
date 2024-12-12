@@ -1,0 +1,115 @@
+/* Header styles */
+.header {
+    background: transparent;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container styles */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Headings */
+h2 {
+    color: #4CAF50;
+    font-size: 1.8rem;
+    margin-top: 20px;
+}
+
+/* Paragraph and text formatting */
+p {
+    line-height: 1.8;
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Highlighted text */
+.highlight {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* List styling */
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+.register {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.registercom button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.register button:hover {
+    background: #45a049;
+}
+
+/* QR code section */
+.qr-code {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* QR code image styling */
+.qr-code img {
+    width: 150px;
+    height: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .register button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .qr-code img {
+        width: 120px;
+    }
+}

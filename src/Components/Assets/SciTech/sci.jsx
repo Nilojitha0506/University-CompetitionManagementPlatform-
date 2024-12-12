@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./sci.css";
 
 const SciTech = () => {
@@ -17,24 +18,12 @@ const SciTech = () => {
     [
       "Medusa",
       "University of Kelaniya",
-      <a
-        href="https://medusa.ecsc-uok.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Please Refer Here
-      </a>,
+      <Link to="/competition01">Please Refer Here</Link>,
     ],
     [
       "Medusa",
       "University of Colombo",
-      <a
-        href="https://medusa.ecsc-uok.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Please Refer Here
-      </a>,
+      <Link to="/competition01">Please Refer Here</Link>,
     ],
     ["IIT", "University of Peradeniya", "Some other detail"],
     ["IIT Details", "University of Kelaniya", "Some other detail"],
@@ -57,6 +46,7 @@ const SciTech = () => {
 
   return (
     <div className="search-container-wrapper">
+      <h1>Science and Technology Competitions</h1>
       <div className="search-container">
         <input
           type="text"

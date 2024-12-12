@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { useNavigate } from "react-router-dom";
 import "./Path.css";
 
 const UniversityCompetitions = () => {
@@ -7,7 +7,7 @@ const UniversityCompetitions = () => {
     "Engineering Challenges"
   );
   const [submittedSelection, setSubmittedSelection] = useState("");
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setSelectedCompetition(event.target.value);
@@ -16,11 +16,9 @@ const UniversityCompetitions = () => {
   const handleSubmit = () => {
     setSubmittedSelection(selectedCompetition);
 
-    // Navigate to a new page based on the selected competition
     if (selectedCompetition === "Science and Technology Competitions") {
-      navigate("/SciTech"); // Change the route as needed
+      navigate("/SciTech");
     }
-    // You can add more conditions for other competitions if needed
   };
 
   return (
