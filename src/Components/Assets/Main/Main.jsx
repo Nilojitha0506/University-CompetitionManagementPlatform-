@@ -75,7 +75,6 @@ const LoginSignup = () => {
       setErrors(validationErrors);
     } else {
       setErrors({});
-      // Navigate to path.jsx
       navigate("/path");
     }
   };
@@ -150,8 +149,6 @@ const LoginSignup = () => {
                 <option value="Admin">Admin</option>
               </select>
             </div>
-
-            {/* Dropdown for selecting University */}
             <div className="input-box">
               <select className="dropdown" required>
                 <option value="">
